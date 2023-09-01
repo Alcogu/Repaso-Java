@@ -5,7 +5,7 @@ public class Bulbasaur {
     private double peso;
     private String sexo;
     private String habilidad;
-    private String tipo = "Veneno";
+    private String[] tipo = {"Veneno", "Planta"};
     private String[] debilidades = {"fuego", "hielo", "volador", "psiquico"};
     private int puntosVida = 100;
 
