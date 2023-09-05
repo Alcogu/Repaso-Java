@@ -7,10 +7,21 @@ public class Charmander {
     private String habilidad;
     private String tipo = "Fuego";
     private String[] debilidades = {"Tierra", "Roca", "Agua"};
+
+    private boolean estaDisponible = true;
     private int puntosVida = 100;
 
     //Constructor
-    public Charmander(double alturaPokemon, double pesoPokemon, String sexoPokemon, String habilidadPokemon){
+    public Charmander(String nombrePokemon, String tipoPokemon, double alturaPokemon, double pesoPokemon, String sexoPokemon, String habilidadPokemon) {
+        this.nombre = nombrePokemon;
+        this.tipo = tipoPokemon;
+        this.altura = alturaPokemon;
+        this.peso = pesoPokemon;
+        this.sexo = sexoPokemon;
+        this.habilidad = habilidadPokemon;
+    }
+
+    public Charmander(double alturaPokemon, double pesoPokemon, String sexoPokemon, String habilidadPokemon) {
         this.altura = alturaPokemon;
         this.peso = pesoPokemon;
         this.sexo = sexoPokemon;
@@ -21,20 +32,39 @@ public class Charmander {
 
     }
 
-    //Getter y Setter
+    //GETTER Y SETTER
+
+
+    public boolean isEstaDisponible() {
+        return estaDisponible;
+    }
+
+    public void setEstaDisponible(boolean estaDisponible) {
+        this.estaDisponible = estaDisponible;
+    }
 
     public int getPuntosVida() {
         return puntosVida;
     }
+
     public void setPuntosVida(int puntosVida) {
         this.puntosVida = puntosVida;
     }
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public double getAltura() {
@@ -69,12 +99,19 @@ public class Charmander {
         this.habilidad = habilidad;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String[] getDebilidades() {
+        return debilidades;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setDebilidades(String[] debilidades) {
+        this.debilidades = debilidades;
     }
 
+
+    //METODOS ADICIONALES
+
+    public void ataqueMarLlamas(Bulbasaur rival, int dano){
+        System.out.println(nombre + " ataca al pokemon " + rival.getNombre() + " y le causa " + dano + " puntos de dano");
+        rival.recibirDano(dano);
+    }
 }

@@ -1,13 +1,19 @@
 public class Main {
+
     public static void main(String[] args) {
-        //Declaración de objeto
-        Bulbasaur bulbasaur = new Bulbasaur(0.7,  6.9, "Macho","Espesura");
-        Charmander charmander = new Charmander(0.6,8.5,"Hembra","Mar de llamas");
+        Charmander charmander = new Charmander(0.6, 8.5, "Macho", "Mar Llamas");
+        Bulbasaur bulbasaur = new Bulbasaur();
 
-        bulbasaur.setTipo("Planta");
-        System.out.println(bulbasaur.getTipo());
+        bulbasaur.setAltura(0.7);
+        bulbasaur.setPeso(6.9);
+        bulbasaur.setSexo("Macho");
+        bulbasaur.setHabilidad("Espesura");
+        bulbasaur.setDebilidades();
 
-        charmander.setTipo("Fuego");
-        System.out.println(charmander.getTipo());
+        charmander.ataqueMarLlamas(bulbasaur, 23);
+
+        System.out.println("Los puntos de vida restantes son: ");
+        System.out.println(bulbasaur.getPuntosVida());
+
     }
 }

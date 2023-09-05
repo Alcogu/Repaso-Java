@@ -5,9 +5,12 @@ public class Bulbasaur {
     private double peso;
     private String sexo;
     private String habilidad;
-    private String[] tipo = {"Veneno", "Planta"};
+    private String tipo = "Veneno";
+    //private String[] tipo = {"Veneno", "Planta"};
     private String[] debilidades = {"fuego", "hielo", "volador", "psiquico"};
+
     private int puntosVida = 100;
+    private boolean estaDisponible = true;
 
     //Constructor
     public Bulbasaur(double alturaPokemon, double pesoPokemon, String sexoPokemon, String habilidadPokemon){
@@ -22,6 +25,26 @@ public class Bulbasaur {
     }
 
     //Getter y Setter
+
+
+    public String[] getDebilidades() {
+        return debilidades;
+    }
+
+    public void setDebilidades() {
+        debilidades[0] = "Fuego";
+        debilidades[1] = "Psiquico";
+        debilidades[2] = "Volador";
+        debilidades[3] = "Hielo";
+    }
+
+    public boolean isEstaDisponible() {
+        return estaDisponible;
+    }
+
+    public void setEstaDisponible(boolean estaDisponible) {
+        this.estaDisponible = estaDisponible;
+    }
 
     public int getPuntosVida() {
         return puntosVida;
@@ -69,12 +92,18 @@ public class Bulbasaur {
         this.habilidad = habilidad;
     }
 
-    public String[] getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String[] tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    //METODOS ADICIONALES
+
+    public void recibirDano(int dano){
+        puntosVida = puntosVida - dano;
     }
 
 }
